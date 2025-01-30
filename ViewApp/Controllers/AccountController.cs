@@ -5,6 +5,7 @@ using ViewApp.Models;
 
 namespace ViewApp.Controllers
 {
+    [Route("account")]
     public class AccountController(
         HttpClient httpClient, 
         IConfiguration config
@@ -13,11 +14,8 @@ namespace ViewApp.Controllers
         [BindProperty]
         public LoginInput LoginDetail { get; set; }
 
-        public void OnGet()
-        {
-        }
-
         [HttpPost]
+        [Route("login")]
         public async Task<IActionResult> Login()
         {
             if (!ModelState.IsValid)
@@ -54,17 +52,20 @@ namespace ViewApp.Controllers
             //    );
             //}
 
-            return View("Index");
+            return RedirectToAction("Index", "Home");
         }
 
+        [Route("logout")]
         public IActionResult Logout()
         {
             Response.Cookies.Delete("AuthToken");
-            return RedirectToAction("Index", "Account");
+            return RedirectToAction("Index", "Home");
         }
+
+        [Route("")]
         public IActionResult Index()
         {
-            return View("Index");
+            return View("Index", "Home");
         }
     }
 }
