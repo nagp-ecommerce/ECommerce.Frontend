@@ -32,7 +32,7 @@ namespace ViewApp.Controllers
         }
 
 
-        [Route("[action]")]
+        [Route("")]
         [HttpGet]
         public async Task<IActionResult> Search()
         {

@@ -9,8 +9,8 @@
             <span class="hidden-sm hidden-xs">Logout</span>
         </a>
     }
-    else 
-    { 
+    else
+    {
         <a href="#" class="pm_item" data-toggle="dropdown" title="login">
             <i class="icon-login"></i>
             <span class="hidden-sm hidden-xs">Login</span>
@@ -32,10 +32,9 @@
                 <form method="post" asp-controller="Account" asp-action="Login">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="required form-group">
-                        <input 
-                            asp-for="Email" 
-                            type="text" name="email" placeholder="Email / Login" class="placeholder-fix">
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                        <input asp-for="Email"
+                               type="text" name="email" placeholder="Email / Login" class="placeholder-fix">
+                        <span asp-validation-for="Email" class="text-danger"></span>
                         <i class="icon_mail field-icon"></i>
                     </div>
                     <div class="required form-group">
@@ -51,15 +50,16 @@
                         <label class="stl" for="remember"><span></span>remember me</label>
                     </div>
                     <div class="form-group text-center">
-                        <button 
-                            type="submit" 
-                            class="btn btn-sm btn-third-col">
-                                Login
-                            </button>
+                        <button type="submit"
+                                class="btn btn-sm btn-third-col">
+                            Login
+                        </button>
                     </div>
-                    <div class="text-center"><a href="coming-soon.html" class="active">
-                        Forgot your password?
-                       </a></div>
+                    <div class="text-center">
+                        <a href="coming-soon.html" class="active">
+                            Forgot your password?
+                        </a>
+                    </div>
                     <div class="dd-delimiter"></div>
                     <div class="form-group text-center">
                         <button type="button" class="btn btn-sm btn-sec-col">Register</button>

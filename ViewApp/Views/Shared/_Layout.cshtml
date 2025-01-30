@@ -38,7 +38,7 @@
                                 </a>
                             </li>
 
-                            @await Html.PartialAsync("Login")
+                            @await Html.PartialAsync("_Login")
 
                             <li class="btn-group hidden-xs dropdown">
                                 <a href="#" class="pm_item" data-toggle="dropdown" title="Wishlist">
@@ -147,7 +147,7 @@
         <div id="header-bar">
             <div class="container">
                 <div class="row">
-                   @await Html.PartialAsync("SearchBox")
+                   @await Html.PartialAsync("_SearchBox")
                     <div id="header-logo" class="col-md-6 col-sm-12">
                         <a href="#">
                             <img src="https://shop.azelab.com/images/logo.svg" class="logo center-block hidden-xs" alt="Shop+ - Responsive HTML5 Multipurpose Ecommerce Template">
@@ -227,7 +227,7 @@
                                 </div>
                             </div>
                         </li>
-                        @await Html.PartialAsync("_CategoryNav")
+                        @await Html.PartialAsync("_CategoryList")
                         <li class="nav-item">
                             <a href="#"><span><i class="icon-screen-desktop"></i> Electronics</span></a>
                             <div class="sub-nav">
