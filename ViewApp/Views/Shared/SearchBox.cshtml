@@ -1,0 +1,12 @@
+﻿@model ViewApp.Models.SearchInput
+
+<div class="col-md-3 top-search-box hidden-sm hidden-xs">
+    <form asp-action="Search" asp-controller="Plp" method="post">
+        <div class="required form-group">
+            <input 
+                asp-for="SearchTerm" 
+                   type="text" name="search_query" placeholder="Search" class="placeholder-fix top-search" autocomplete="off">
+            <button><i class="icon_search field-icon"></i></button>
+        </div>
+    </form>
+</div>

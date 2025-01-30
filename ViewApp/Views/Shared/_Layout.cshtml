@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+ <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Basic Page | Shop+ - Responsive HTML5 Multipurpose Ecommerce Template</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='~/font-face/helvetica.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+    <!-- <link rel="stylesheet" href="plugins/accessiblemegamenu/megamenu.css"> -->
+    <link rel="stylesheet" href="~/css/vendor/validation-engine.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/fonts/simple-line-icons.css">
+    <link rel="stylesheet" href="~/fonts/elegant-icons.css">
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+    <header>
+
+        <!-- top bar begin -->
+        <div id="top-bar">
+            <div class="container">
+                 @await Html.PartialAsync("TopLeftBar") 
+                <div class="pull-right">
+                    <div id="user-top-bar">
+                        <ul class="list-inline">
+                            <li class="btn-group">
+                                <a href="#" class="pm_item visible-xs">
+                                    <i class="icon-bag"></i> (2)
+                                </a>
+                            </li>
+
+                            @await Html.PartialAsync("Login")
+
+                            <li class="btn-group hidden-xs dropdown">
+                                <a href="#" class="pm_item" data-toggle="dropdown" title="Wishlist">
+                                    <i class="icon-heart"></i>
+                                    <span class="hidden-sm">Wishlist</span> (<span class="dd-products-count">2</span>)
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right larger" role="menu" title="Compare Products">
+                                    <span class="dropdown-triangle-up"></span>
+                                    <a href="#" class="dd-close-btn"><i class="icon_close"></i></a>
+                                    <div class="dropdown-head">
+                                        <h4 class="pull-left">My Wishlist</h4>
+                                    </div>
+                                    <div class="dd-wrapper">
+                                        <div class="dd-list-empty">There is no product in whishlist!</div>
+                                        <div id="wishlist-product-group" class="dropdown-product-list">
+                                            <div class="dd-product-group" id="pr1">
+                                                <div class="dd-product-box pull-left">
+                                                    <a href="#" title="product name">
+                                                        <img src="images/pr_2-small.jpg" alt="product name">
+                                                    </a>
+                                                </div>
+                                                <div class="dd-product-desc pull-left">
+                                                    <a class="title">Beautiful Fit Velvet Sweater For Him</a>
+                                                    <div class="qty">1 x <span class="active">$700.00</span></div>
+                                                    <button type="button" class="btn btn-sm btn-third-col">Add to Cart</button>
+                                                    <a href="#" class="close-btn ddr"><i class="icon_close"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="dd-product-group" id="pr2">
+                                                <div class="dd-product-box pull-left">
+                                                    <a href="#" title="product name">
+                                                        <img src="images/pr_3-small.jpg" alt="product name">
+                                                    </a>
+                                                </div>
+                                                <div class="dd-product-desc pull-left">
+                                                    <a class="title">Beautiful Fit Velvet Sweater For Her</a>
+                                                    <div class="qty">1 x <span class="active">$800.00</span></div>
+                                                    <button type="button" class="btn btn-sm btn-third-col">Add to Cart</button>
+                                                    <a href="#" class="close-btn ddr"><i class="icon_close"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="text-center clear-all-btn">
+                                                <a href="#" class="close-btn"><i class="icon_close"></i><span>Clear all</span></a>
+                                            </div>
+                                        </div>
+                                        <a href="wishlist.html" class="btn btn-md btn-third-col btn-w100">Go to Wishlist</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="btn-group hidden-xs dropdown">
+                                <a href="#" class="pm_item" data-toggle="dropdown">
+                                    <i class="icon-shuffle"></i>
+                                    <span class="hidden-sm">Compare</span> (<span class="dd-products-count">2</span>)
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right larger" role="menu">
+                                    <span class="dropdown-triangle-up"></span>
+                                    <a href="#" class="dd-close-btn"><i class="icon_close"></i></a>
+                                    <div class="dropdown-head">
+                                        <h4 class="pull-left">Compare List</h4>
+                                    </div>
+                                    <div class="dd-wrapper">
+                                        <div class="dd-list-empty">There is no product to compare!</div>
+                                        <div id="compare-product-group" class="dropdown-product-list">
+                                            <div class="dd-product-group" id="pr3">
+                                                <div class="dd-product-box pull-left">
+                                                    <a href="#" title="product name">
+                                                        <img src="images/pr_2-small.jpg" alt="product name">
+                                                    </a>
+                                                </div>
+                                                <div class="dd-product-desc pull-left">
+                                                    <a class="title">Beautiful Fit Velvet Sweater For Him</a>
+                                                    <div class="qty">1 x <span class="active">$700.00</span></div>
+                                                    <button type="button" class="btn btn-sm btn-third-col">Add to Cart</button>
+                                                    <a href="#" class="close-btn ddr"><i class="icon_close"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="dd-product-group" id="pr4">
+                                                <div class="dd-product-box pull-left">
+                                                    <a href="#" title="product name">
+                                                        <img src="images/pr_3-small.jpg" alt="product name">
+                                                    </a>
+                                                </div>
+                                                <div class="dd-product-desc pull-left">
+                                                    <a class="title">Beautiful Fit Velvet Sweater For Here</a>
+                                                    <div class="qty">1 x <span class="active">$800.00</span></div>
+                                                    <button type="button" class="btn btn-sm btn-third-col">Add to Cart</button>
+                                                    <a href="#" class="close-btn ddr"><i class="icon_close"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="text-center clear-all-btn">
+                                                <a id="clear-compare-products" class="close-btn"><i class="icon_close"></i><span>Clear all</span></a>
+                                            </div>
+                                        </div>
+                                        <a href="compare.html" class="btn btn-md btn-third-col btn-w100">Go to Comparision List</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- top bar end -->
+        <!-- header bar begin -->
+        <div id="header-bar">
+            <div class="container">
+                <div class="row">
+                   @await Html.PartialAsync("SearchBox")
+                    <div id="header-logo" class="col-md-6 col-sm-12">
+                        <a href="#">
+                            <img src="https://shop.azelab.com/images/logo.svg" class="logo center-block hidden-xs" alt="Shop+ - Responsive HTML5 Multipurpose Ecommerce Template">
+                            <img src="https://shop.azelab.com/images/logo.svg" class="logo center-block visible-xs hidden-sm" alt="Shop+ - Responsive HTML5 Multipurpose Ecommerce Template">
+                        </a>
+                    </div>
+                    @await Html.PartialAsync("_Cart") 
+                </div>
+            </div>
+        </div>
+        <!-- header bar end -->
+        <!-- main menu begin -->
+        <div class="top-menu">
+            <div class="container">
+                <nav class="main-menu">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#"><i class="icon-screen-desktop"></i> Home</a>
+                            <div class="sub-nav">
+                                <ul class="sub-nav-group">
+                                    <li class="has-sub-nav">
+                                        <a href="#"><span>Clothes version</span></a>
+                                        <div class="sub-nav">
+                                            <ul class="sub-nav-group">
+                                                <li><a href="home-1-clothes.html"><span>Boxed Versihon</span></a></li>
+                                                <li><a href="home-1-clothes-full-width.html"><span>Full version</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="home-2-furniture.html"><span>Furniture version</span></a></li>
+                                    <li><a href="home-3-bookstore.html"><span>Bookstore version</span></a></li>
+                                    <li><a href="home-4-electronics.html"><span>Electronics version</span></a></li>
+                                    <li><a href="home-5-flower.html"><span>Flower version</span></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#"><span><i class="icon-user"></i>Pages</span></a>
+                            <div class="sub-nav full padding">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <ul class="sub-nav-group sub-nav-grey">
+                                            <li><a href="basic-page.html"><span>Basic Page</span></a></li>
+                                            <li><a href="blog.html"><span>Blog Page</span></a></li>
+                                            <li><a asp-page="/PLP"><span>Category Page</span></a></li>
+                                            <li><a href="account.html"><span>Account Page</span></a></li>
+                                            <li><a href="coming-soon.html"><span>Coming Soon Page</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <ul class="sub-nav-group sub-nav-grey">
+                                            <li><a href="contact.html"><span>Contact Page</span></a></li>
+                                            <li><a href="email_template.html"><span>Email Template Page</span></a></li>
+                                            <li><a href="login_register.html"><span>Login Register Page</span></a></li>
+                                            <li><a href="order-complete.html"><span>Order Complete Page</span></a></li>
+                                            <li><a href="order-history.html"><span>Order History</span></a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <ul class="sub-nav-group sub-nav-grey">
+                                            <li><a href="shopping-cart.html"><span>Shopping Cart Page</span></a></li>
+                                            <li><a href="shortcodes.html"><span>Shortcodes Page</span></a></li>
+                                            <li><a href="single-blog.html"><span>Single Blog Page</span></a></li>
+                                            <li><a href="wishlist.html"><span>Wishlist Page</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <ul class="sub-nav-group sub-nav-grey">
+                                            <li><a asp-page="/PDP"><span>Product Page</span></a></li>
+                                            <li><a href="review_page.html"><span>Review Page</span></a></li>
+                                            <li><a href="checkout.html"><span>Checkout Page</span></a></li>
+                                            <li><a href="compare.html"><span>Compare Page</span></a></li>
+                                            <li><a href="404.html"><span>404 Page</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        @await Html.PartialAsync("_CategoryNav")
+                        <li class="nav-item">
+                            <a href="#"><span><i class="icon-screen-desktop"></i> Electronics</span></a>
+                            <div class="sub-nav">
+                                <ul class="sub-nav-group">
+                                    <li><a href="account.html"><span>Account</span></a></li>
+                                    <li><a href="#"><span>New Product</span></a></li>
+                                    <li><a href="#"><span>Special Product</span></a></li>
+                                    <li><a href="#"><span>Featured Product</span></a></li>
+                                    <li><a href="contact.html"><span>Contact</span></a></li>
+                                    <li><a href="shortcodes.html"><span>Shortcodes</span></a></li>
+                                    <li class="has-sub-nav">
+                                        <a href="#"><span>Submenu Left</span></a>
+                                        <div class="sub-nav left-side">
+                                            <ul class="sub-nav-group">
+                                                <li><a href="account.html"><span>Account</span></a></li>
+                                                <li><a href="#"><span>New Product</span></a></li>
+                                                <li><a href="#"><span>Special Product</span></a></li>
+                                                <li><a href="#"><span>Featured Product</span></a></li>
+                                                <li><a href="contact.html"><span>Contact</span></a></li>
+                                                <li><a href="shortcodes.html"><span>Shortcodes</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html"><span><i class="icon-pencil"></i> Blog</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="coming-soon.html"><span><i class="icon-cup"></i> Popular</span></a>
+                            <div class="sub-nav full padding">
+                                <div class="megamenu-popular mmp-type-2 box-with-pager">
+                                    <ul class="vertical-bx-1">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <a asp-page="/PDP">
+                                                        <figure>
+                                                            <span class="img-cover"><img src="images/pr_1.jpg" alt="image name" class="pic"></span>
+                                                            <figcaption>
+                                                                <p>Woman Red Handy Bag</p>
+                                                                <span class="price">$950.00</span>
+                                                                <span class="old-price">$990.00</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a asp-page="/PDP">
+                                                        <figure>
+                                                            <span class="img-cover"><img src="images/pr_2.jpg" alt="image name" class="pic"></span>
+                                                            <figcaption>
+                                                                <p>Woman Red Handy Bag</p>
+                                                                <span class="price">$950.00</span>
+                                                                <span class="old-price">$990.00</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a asp-page="/PDP">
+                                                        <figure>
+                                                            <span class="img-cover"><img src="images/pr_3.jpg" alt="image name" class="pic"></span>
+                                                            <figcaption>
+                                                                <p>Woman Red Handy Bag</p>
+                                                                <span class="price">$950.00</span>
+                                                                <span class="old-price">$990.00</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a asp-page="/PDP">
+                                                        <figure>
+                                                            <span class="img-cover"><img src="images/pr_4.jpg" alt="image name" class="pic"></span>
+                                                            <figcaption>
+                                                                <p>Woman Red Handy Bag</p>
+                                                                <span class="price">$950.00</span>
+                                                                <span class="old-price">$990.00</span>
+                                                            </figcaption>
+                                                        </figure>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="blog.html" class="img-fade-hover">
+                                            <img src="images/megamenu-btm1.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="blog.html" class="img-fade-hover">
+                                            <img src="images/megamenu-btm2.jpg" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="blog.html" class="img-fade-hover">
+                                            <img src="images/megamenu-btm3.jpg" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html"><span><i class="icon-call-in"></i> Contact Us</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-page="/PLP"><span><i class="icon-wallet"></i> Sale</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- main menu end -->
+        <!-- page header begin -->
+        <div class="pg-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 title">
+                        <h1>@ViewBag.Title</h1>
+                    </div>
+                    <div class="col-sm-6 b-crumbs-block">
+                        <div class="b-crumbs text-right"><a href="#">Home</a> <i class="arrow_carrot-right"></i> Basic Page</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page header end -->
+
+    </header>
+
+    <div class="pg-body">
+        @RenderBody();
+    </div> 
+
+     @await Html.PartialAsync("_Footer") 
+
+
+    <!-- common modals begin -->
+
+    <div class="modal fade" id="product-added" tabindex="-1" role="dialog" aria-labelledby="product-added" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="modal-close" data-dismiss="modal" aria-hidden="true"><i class="icon_close"></i></a>
+                    <h4 class="modal-title">Item was added to your shopping cart</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="wishlist-product-group-modal" class="dropdown-product-list">
+                        <div class="dd-product-group" id="pr11">
+                            <div class="dd-product-box pull-left">
+                                <a href="#" title="product name">
+                                    <img src="images/pr_2-small.jpg" alt="product name">
+                                </a>
+                            </div>
+                            <div class="dd-product-desc pull-left">
+                                <a class="title">Beautiful Fit Velvet Sweater For Him</a>
+                                <div class="qty">1 x <span class="active">$700.00</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row no-gutter">
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-md btn-third-col btn-w100">View Cart</button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" class="btn btn-md btn-third-col btn-w100" data-dismiss="modal">Continue Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="info-box" tabindex="-1" role="dialog" aria-labelledby="product-added" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#" class="modal-close" data-dismiss="modal" aria-hidden="true"><i class="icon_close"></i></a>
+                    <h4 class="modal-title">Information</h4>
+                </div>
+                <div class="modal-body modal-body-info">
+                    <p>Beautiful Fit Velvet Sweater has been added to comparison list</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- common modals end -->
+    <!-- JS Libs -->
+    <script src="~/js/jquery-1.11.0.min.js"></script>
+    <script src="~/js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.bxslider.min.js"></script>
+    <script src="~/js/jquery-accessibleMegaMenu.js"></script>
+    <script src="~/js/jquery.validationEngine.js"></script>
+    <script src="~/js/jquery.validationEngine-en.js"></script>
+    <script src="~/js/fastclick.js"></script> <!-- Eliminating the 300ms click delay on mobile browsers -->
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/scripts.js"></script>
+</body>
+</html>

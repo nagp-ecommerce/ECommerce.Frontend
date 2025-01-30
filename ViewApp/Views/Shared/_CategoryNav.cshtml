@@ -1,0 +1,93 @@
+﻿<li class="nav-item">
+    <a href="#"><span><i class="icon-user-female"></i> Category</span></a>
+    <div class="sub-nav full padding">
+        <div class="row">
+            <div class="col-md-3">
+                <h3 class="sub-nav-title">Jackets</h3>
+                <ul class="sub-nav-group sub-nav-grey">
+                    @if (@ViewBag.Categories != null)
+                    {
+                    @foreach (var categoryname in @ViewBag.Categories)
+                        {
+                            <li>
+                                <a asp-controller="Plp"
+                                   asp-route-category="@categoryname">
+                                    <span>@categoryname</span>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="sub-nav-title">ACCESSORIES</h3>
+                <ul class="sub-nav-group sub-nav-grey">
+                    @if (@ViewBag.Categories != null)
+                    {
+                        @foreach (var categoryname in @ViewBag.Categories)
+                        {
+                            <li>
+                                <a asp-controller="Plp"
+                                   asp-route-category="@categoryname">
+                                    <span>@categoryname</span>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h3 class="sub-nav-title">SHOES</h3>
+                <ul class="sub-nav-group sub-nav-grey">
+                    @if (@ViewBag.Categories != null)
+                    {
+                        @foreach (var categoryname in @ViewBag.Categories)
+                        {
+                            <li>
+                                <a asp-controller="Plp"
+                                   asp-route-category="@categoryname">
+                                    <span>@categoryname</span>
+                                </a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="megamenu-popular box-with-pager">
+                    <div class="sub-nav-title">
+                        Popular products
+                    </div>
+                    <div>
+                        <ul class="vertical-bx-1">
+                            <li>
+                                <a asp-page="/PDP">
+                                    <figure>
+                                        <span class="img-cover"><img src="images/pr_1-menu.jpg" alt="image name" class="pic"></span>
+                                        <figcaption>
+                                            <p>Black Bag</p>
+                                            <span class="price">$950.00</span>
+                                            <span class="old-price">$990.00</span>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-page="/PDP">
+                                    <figure>
+                                        <span class="img-cover"><img src="images/pr_2-menu.jpg" alt="image name" class="pic"></span>
+                                        <figcaption>
+                                            <p>Woman Red Handy Bag</p>
+                                            <span class="price">$950.00</span>
+                                            <span class="old-price">$990.00</span>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</li>
