@@ -46,9 +46,9 @@
                                                 </li>
                                                 <li>
                                                     <a href="#" class="elevatezoom-gallery" data-update=""
-                                                       data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png"
-                                                       data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/large/image1.jpg">
-                                                        <img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png" width="100" alt="" />
+                                                       data-image="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png"
+                                                       data-zoom-image="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/large/image1.jpg">
+                                                        <img src="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png" width="100" alt="" />
                                                     </a>
                                                 </li>
                                                 <li>
@@ -74,9 +74,9 @@
                                                 </li>
                                                 <li>
                                                     <a href="#" class="elevatezoom-gallery" data-update=""
-                                                       data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png"
-                                                       data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/large/image1.jpg">
-                                                        <img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png" width="100" alt="" />
+                                                       data-image="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png"
+                                                       data-zoom-image="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/large/image1.jpg">
+                                                        <img src="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png" width="100" alt="" />
                                                     </a>
                                                 </li>
                                                 <li>
@@ -116,9 +116,9 @@
                                                 </li>
                                                 <li>
                                                     <a href="#" class="elevatezoom-gallery" data-update=""
-                                                       data-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png"
-                                                       data-zoom-image="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/large/image1.jpg">
-                                                        <img src="http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png" width="100" alt="" />
+                                                       data-image="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png"
+                                                       data-zoom-image="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/large/image1.jpg">
+                                                        <img src="https://www.elevateweb.co.uk/wp-content/themes/radial/zoom/https://shop.azelab.com/images/small/image1.png" width="100" alt="" />
                                                     </a>
                                                 </li>
                                                 <li>
@@ -170,7 +170,6 @@
                                 </div>
                                 <div class="modal-body modal-body-info">
                                     <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zTJkgHuYt_8?rel=0" allowfullscreen=""></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -238,12 +237,12 @@
             <div class="col-md-6 col-lg-5 col-xs-12 product-info">
                 <div id="zoom-window-container" style="position: relative;"></div>
                 <div class="product-reviews">
-                    <h3>@ViewBag.Product.Name</h3>
+                    <h3>@ViewBag.Product.ProductName</h3>
                     <span class="stars-rating"><span class="stars"></span></span>
-                    <a href="#">@ViewBag.Product.Reviews.Count ?? 0</a> Reviews
+                    @* <a href="#">@ViewBag.Product?.Reviews?.Count ?? 0</a> Reviews *@
                     <!--<a href="#review-btn">Add Review</a>-->
                 </div>
-                <img src=@ViewBag.Product.ImageUrl alt="#" class="brand">
+                <img src=@ViewBag.Product.MainImageUrl alt="#" class="brand">
                 <div class="hr"></div>
                 <div class="price">
                     @ViewBag.Product.Price

@@ -34,23 +34,35 @@ namespace ViewApp.Controllers
                     Encoding.UTF8,
             "application/json"
             );
-            
-            //var res = await httpClient.PostAsync(
-            //    $"{config["ApiURL:Auth"]}/login", content);
 
-            //if (res.IsSuccessStatusCode)
-            //{
-            //    var result = await res.Content.ReadFromJsonAsync<LoginResponse>();
-            //    Response.Cookies.Append(
-            //        "AuthToken",
-            //        result?.token!,
-            //        new CookieOptions()
-            //        {
-            //            HttpOnly = true,
-            //            Secure =true
-            //        }
-            //    );
-            //}
+            var res = await httpClient.PostAsync(
+                $"{config["ApiUrl:Auth"]}/login", content);
+
+            if (res.IsSuccessStatusCode)
+            {
+                var result = await res.Content.ReadFromJsonAsync<LoginResponse>();
+                if (result.Success)
+                {
+                    Response.Cookies.Append(
+                      "AuthToken",
+                      result.Message ?? "",
+                      new CookieOptions()
+                      {
+                          HttpOnly = true,
+                          Secure = true
+                      }
+                  );
+
+                    TempData["Message"] = "Logged in successfully";
+                    TempData["MessageType"] = "success";
+                }
+                else 
+                {
+                    TempData["Message"] = result.Message;
+                    TempData["MessageType"] = "danger";
+                }
+              
+            }
 
             return RedirectToAction("Index", "Home");
         }

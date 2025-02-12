@@ -8,50 +8,47 @@ namespace ViewApp.Controllers
     [Route("[controller]")]
     public class PlpController(HttpClient httpClient, IConfiguration config) : Controller
     {
-        [BindProperty]
-        public string SearchTerm { get; set; }
+        //[BindProperty]
+        //public string SearchTerm { get; set; }
 
         [Route("[action]")]
         [Route("{category?}")]
         [HttpGet]
         public async Task<IActionResult> Index(string? category)
         {
-            // fetch all products in category
+            var categoryResponse = await httpClient.GetAsync($"{config["ApiUrl:Category"]}/all");
+            var Categories = new List<Category>();
+            if (categoryResponse.IsSuccessStatusCode)
+            {
+                Categories = await categoryResponse.Content.ReadFromJsonAsync<List<Category>>();
+            }
+            ViewBag.Categories = Categories;
 
-            //var res = await httpClient.GetAsync($"{config["ApiURL:Search"]}/api/search/SearchByCategory?categoryName={selectedCategory}");
-            //if (res.IsSuccessStatusCode)
-            //{
-            //    Products = await res.Content.ReadFromJsonAsync<List<Product>>();
-            //}
-            ViewBag.Products = new List<Product>() { new Product { 
-                Name="Perfume", Category=category, Description="Good fragrance", 
-                ImageUrl= "https://shop.azelab.com/images/home-4/1.jpg" ,
-                Price=5000, Reviews = new List<string>(){ "","", "", ""}, Id="1"
-            } } ;
+            // fetch all products in category
+            var Products = new List<Product>();
+            var res = await httpClient.GetAsync($"{config["ApiUrl:Category"]}/GetProductsByCategory?categoryName={category}");
+            if (res.IsSuccessStatusCode)
+            {
+                 Products = await res.Content.ReadFromJsonAsync<List<Product>>();
+            }
+            ViewBag.Products = Products;
+            
             return View();
         }
 
 
         [Route("")]
         [HttpGet]
-        public async Task<IActionResult> Search()
+        public async Task<IActionResult> Search(string search_term)
         {
-            //var token = Request.Cookies["AuthToken"];
-            //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            //var res = await httpClient.GetAsync($"{config["ApiURL:Search"]}/api/search/SearchByProduct?productName={SearchTerm}");
-            //if (res.IsSuccessStatusCode)
-            //{
-            //    ViewBag.Products = await res.Content.ReadFromJsonAsync<List<Product>>();
-            //}
-            ViewBag.Products = new List<Product>() { new Product {
-                Name="Perfume", Category="Electronics", Description="Good fragrance",
-                ImageUrl= "https://shop.azelab.com/images/home-4/1.jpg" ,
-                Price=5000, Reviews = new List<string>(){ "","", "", ""}, Id="2"
-            } , new Product {
-                Name="Perfume", Category="Hardware", Description="Good fragrance",
-                ImageUrl= "https://shop.azelab.com/images/home-4/1.jpg" ,
-                Price=5000, Reviews = new List<string>(){ "","", "", ""}, Id ="3"
-            }};
+            var token = Request.Cookies["AuthToken"];
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var res = await httpClient.GetAsync($"{config["ApiUrl:Search"]}/product?productName={search_term}");
+            if (res.IsSuccessStatusCode)
+            {
+                var result = await res.Content.ReadFromJsonAsync<ProductSearchResponse>();
+                ViewBag.Products = result?.Products;
+            }
             return View("Index");
         }
      

@@ -18,9 +18,15 @@ namespace ViewApp.Controllers
         [Route("[action]")]
         [Route("")]
         [Route("~/")]
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
-            ViewBag.Categories = new List<string>() { "Jackets", "Shirts", "Bags", "Purse", "Trousers", "Belt", "Watch" };
+            var res = await httpClient.GetAsync($"{config["ApiUrl:Category"]}/all");
+            var Categories = new List<Category>();
+            if (res.IsSuccessStatusCode)
+            {
+                Categories = await res.Content.ReadFromJsonAsync<List<Category>>();
+            }
+            ViewBag.Categories = Categories;
             return View();
         }
 

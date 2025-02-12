@@ -4,7 +4,7 @@
 <li class="btn-group dropdown">
     @if (HttpContextAccessor.HttpContext.Request.Cookies.ContainsKey("AuthToken"))
     {
-        <a href="#" class="pm_item" title="logout" asp-controller="Account" asp-action="Logout">
+        <a class="pm_item" title="logout" asp-controller="Account" asp-action="Logout">
             <i class="icon-logout"></i>
             <span class="hidden-sm hidden-xs">Logout</span>
         </a>

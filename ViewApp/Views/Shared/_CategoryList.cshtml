@@ -7,52 +7,52 @@
                 <ul class="sub-nav-group sub-nav-grey">
                     @if (@ViewBag.Categories != null)
                     {
-                        @foreach (var categoryname in @ViewBag.Categories)
+                        @foreach (var cat in @ViewBag.Categories)
                         {
                             <li>
                                 <a asp-controller="Plp"
-                                   asp-route-category="@categoryname">
-                                    <span>@categoryname</span>
+                                   asp-route-category="@cat.CategoryName">
+                                    <span>@cat.CategoryName</span>
                                 </a>
                             </li>
                         }
                     }
                 </ul>
             </div>
-            <div class="col-md-3">
-                <h3 class="sub-nav-title">ACCESSORIES</h3>
-                <ul class="sub-nav-group sub-nav-grey">
-                    @if (@ViewBag.Categories != null)
-                    {
-                        @foreach (var categoryname in @ViewBag.Categories)
-                        {
-                            <li>
-                                <a asp-controller="Plp"
-                                   asp-route-category="@categoryname">
-                                    <span>@categoryname</span>
-                                </a>
-                            </li>
-                        }
-                    }
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h3 class="sub-nav-title">SHOES</h3>
-                <ul class="sub-nav-group sub-nav-grey">
-                    @if (@ViewBag.Categories != null)
-                    {
-                        @foreach (var categoryname in @ViewBag.Categories)
-                        {
-                            <li>
-                                <a asp-controller="Plp"
-                                   asp-route-category="@categoryname">
-                                    <span>@categoryname</span>
-                                </a>
-                            </li>
-                        }
-                    }
-                </ul>
-            </div>
+            @* <div class="col-md-3"> *@
+            @*     <h3 class="sub-nav-title">ACCESSORIES</h3> *@
+            @*     <ul class="sub-nav-group sub-nav-grey"> *@
+            @*         @if (@ViewBag.Categories != null) *@
+            @*         { *@
+            @*             @foreach (var categoryname in @ViewBag.Categories) *@
+            @*             { *@
+            @*                 <li> *@
+            @*                     <a asp-controller="Plp" *@
+            @*                        asp-route-category="@categoryname"> *@
+            @*                         <span>@categoryname</span> *@
+            @*                     </a> *@
+            @*                 </li> *@
+            @*             } *@
+            @*         } *@
+            @*     </ul> *@
+            @* </div> *@
+            @* <div class="col-md-3"> *@
+            @*     <h3 class="sub-nav-title">SHOES</h3> *@
+            @*     <ul class="sub-nav-group sub-nav-grey"> *@
+            @*         @if (@ViewBag.Categories != null) *@
+            @*         { *@
+            @*             @foreach (var categoryname in @ViewBag.Categories) *@
+            @*             { *@
+            @*                 <li> *@
+            @*                     <a asp-controller="Plp" *@
+            @*                        asp-route-category="@categoryname"> *@
+            @*                         <span>@categoryname</span> *@
+            @*                     </a> *@
+            @*                 </li> *@
+            @*             } *@
+            @*         } *@
+            @*     </ul> *@
+            @* </div> *@
             <div class="col-md-3">
                 <div class="megamenu-popular box-with-pager">
                     <div class="sub-nav-title">

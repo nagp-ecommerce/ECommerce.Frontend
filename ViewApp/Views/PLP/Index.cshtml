@@ -113,8 +113,8 @@
                                 {
                                     <div class="col-md-4 col-sm-6 pl-item">
                                         <figure>
-                                            <a asp-controller="Pdp" asp-route-id="@product.Id">
-                                                <img src=@product.ImageUrl 
+                                            <a asp-controller="Pdp" asp-action="Index" asp-route-id="@product.Id">
+                                                <img src=@product.MainImageUrl 
                                                     alt="">
                                             </a>
                                             <label class="pl-badge">NEW</label>
@@ -130,7 +130,7 @@
                                                 @* <span class="pl-price-old">$ 950.00</span> *@
                                                 <span class="pl-price">@product.Price</span>
                                             </p>
-                                            <p class="pl-name">@product.Name</p>
+                                            <p class="pl-name">@product.ProductName</p>
                                             <span class="stars-rating stars-4"><span class="stars"></span></span>
                                         </div>
                                     </div>
@@ -393,22 +393,18 @@
                         <h3 class="wg-title">Categories</h3>
                         <div class="wg-body">
                             <ul class="wg-categories-list">
-                                <li>
-                                    <a href="#">Sweaters <span class="wgc-count">(23)</span></a>
-                                    <ul>
-                                        <li><a href="#">Adidas sport</a></li>
-                                        <li><a href="#">American colleget</a></li>
-                                        <li><a href="#">Parka jacket</a></li>
-                                        <li><a href="#">Minimum franco</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Accessories <span class="wgc-count">(2)</span></a></li>
-                                <li><a href="#">Shoes <span class="wgc-count">(15)</span></a></li>
-                                <li><a href="#">Dresses <span class="wgc-count">(26)</span></a></li>
-                                <li><a href="#">Jeans <span class="wgc-count">(56)</span></a></li>
-                                <li><a href="#">T-Shirts <span class="wgc-count">(23)</span></a></li>
-                                <li><a href="#">Jackets <span class="wgc-count">(32)</span></a></li>
-                                <li><a href="#">Shorts <span class="wgc-count">(64)</span></a></li>
+                                @if (@ViewBag.Categories != null)
+                                {
+                                    @foreach (var cat in @ViewBag.Categories)
+                                    {
+                                        <li>
+                                            <a asp-controller="Plp"
+                                               asp-route-category="@cat.CategoryName">
+                                                <span>@cat.CategoryName</span>
+                                            </a>
+                                        </li>
+                                    }
+                                }
                             </ul>
                         </div>
                     </div> <!-- widget -->
