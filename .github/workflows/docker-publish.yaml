@@ -25,3 +25,18 @@ jobs:
 
       - name: Push Docker Image to GHCR
         run: docker push ghcr.io/${{ github.repository_owner }}/ecom-frontend:latest
+
+  deploy:
+      needs: build-and-push
+      runs-on: ubuntu-latest
+      steps:
+        - name: Connect to AWS EC2 and Deploy
+          run: |
+            echo "${{ secrets.AWS_PRIVATE_KEY }}" > private_key.pem
+            chmod 600 private_key.pem
+            ssh -o StrictHostKeyChecking=no -i private_key.pem ubuntu@${{ secrets.AWS_EC2_IP }} << EOF
+              docker pull ghcr.io/${{ github.repository_owner }}/ecom-frontend:latest
+              docker stop ecom-frontend || true
+              docker rm ecom-frontend || true
+              docker run -d --name ecom-frontend -p 8080:8080 ghcr.io/${{ github.repository_owner }}/ecom-frontend:latest
+            EOF
