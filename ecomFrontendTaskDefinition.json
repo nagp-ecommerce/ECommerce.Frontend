@@ -37,13 +37,7 @@
                 },
                 "secretOptions": []
             },
-            "systemControls": [],
-            "resourceRequirements": [
-                {
-                    "value": "1",
-                    "type": "GPU"
-                }
-            ]
+            "systemControls": []
         }
     ],
     "family": "ecomFrontendTaskDefinition",
