@@ -31,8 +31,24 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+          aws-region: ap-south-1
+
+      # - name: Add new image to AWS ECS Task Definition
+      #   id: task-def
+      #   uses: aws-actions/amazon-ecs-render-task-definition@v1
+      #   with:
+      #     task-definition: task-definition.json
+      #     container-name: my-container
+      #     image: ghcr.io/${{ github.repository_owner }}/ecom-frontend:latest
+
+      # - name: Deploy updated task definition
+      #   uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      #   with:
+      #     task-definition: ${{ steps.render-task.outputs.task-definition }}
+      #     service: ecom-frontend-service
+      #     cluster: NagpDevCluster
+      #     wait-for-service-stability: true
     
-      - name: Deploy to ECS
-        run: |
-          aws ecs update-service --cluster NagpDevCluster --service ecom-frontend-service --force-new-deployment
+      # - name: Deploy to ECS
+      #   run: |
+      #     aws ecs update-service --cluster NagpDevCluster --service ecom-frontend-service --force-new-deployment
