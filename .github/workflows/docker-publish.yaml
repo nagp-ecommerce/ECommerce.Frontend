@@ -36,7 +36,7 @@ jobs:
       - name: Force ECS Service Update
         run: |
             aws ecs update-service \
-                --cluster NagpDevCluster \
+                --cluster DevCluster \
                 --service ecom-frontend-service \
                 --force-new-deployment
     
