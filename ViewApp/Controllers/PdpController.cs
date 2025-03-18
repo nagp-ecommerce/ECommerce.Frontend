@@ -12,7 +12,8 @@ namespace ViewApp.Controllers
         [Route("[action]")]
         public async Task<IActionResult> IndexAsync(string id)
         {
-            var res = await httpClient.GetAsync($"{config["ApiUrl:Product"]}/{id}");
+            var baseUrl = Environment.GetEnvironmentVariable("BaseApiUrl") ?? config["ApiUrl:Base"];
+            var res = await httpClient.GetAsync($"{baseUrl}/api/products/{id}");
             if (res.IsSuccessStatusCode)
             {
                 var product = await res.Content.ReadFromJsonAsync<Product>();

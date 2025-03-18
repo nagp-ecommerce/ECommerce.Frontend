@@ -20,7 +20,8 @@ namespace ViewApp.Controllers
         [Route("~/")]
         public async Task<IActionResult> IndexAsync()
         {
-            var res = await httpClient.GetAsync($"{config["ApiUrl:Category"]}/all");
+            var baseUrl = Environment.GetEnvironmentVariable("BaseApiUrl") ?? config["ApiUrl:Base"];
+            var res = await httpClient.GetAsync($"{baseUrl}/api/category/all");
             var Categories = new List<Category>();
             if (res.IsSuccessStatusCode)
             {

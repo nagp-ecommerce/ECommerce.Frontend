@@ -35,8 +35,9 @@ namespace ViewApp.Controllers
             "application/json"
             );
 
+            var baseUrl = Environment.GetEnvironmentVariable("BaseApiUrl") ?? config["ApiUrl:Base"];
             var res = await httpClient.PostAsync(
-                $"{config["ApiUrl:Auth"]}/login", content);
+                $"{baseUrl}/api/auth/login", content);
 
             if (res.IsSuccessStatusCode)
             {
